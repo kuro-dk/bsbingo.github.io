@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Play Bullshit Bingo during meetings and presentations. Mark off buzzwords and call out the corporate speak!">
+  <meta name="theme-color" content="#0a0a0f">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Bullshit Bingo">
+  <meta property="og:description" content="The ultimate meeting survival game. Mark off buzzwords during presentations!">
+  <meta property="og:type" content="website">
+  
+  <title>Bullshit Bingo | Meeting Survival Game</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="logo">
+        BULLSHIT
+        <span>BINGO</span>
+      </h1>
+      <p class="tagline">The ultimate meeting survival game 🎯</p>
+    </header>
+    
+    <!-- Topic Selection Screen -->
+    <main id="topic-screen">
+      <h2 class="section-title">Choose Your Topic</h2>
+      
+      <div class="topic-grid" id="topic-selector">
+        <!-- Topics will be rendered here by JavaScript -->
+      </div>
+      
+      <div class="options">
+        <div class="option-row">
+          <span class="option-label">Free space in center</span>
+          <label class="toggle">
+            <input type="checkbox" id="free-space-toggle" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Game Screen -->
+    <main id="game-screen" class="hidden">
+      <div class="game-header">
+        <div class="game-info">
+          <span id="current-topic"></span>
+          <div class="timer-display">
+            <span id="timer">00:00</span>
+          </div>
+        </div>
+        <div class="game-actions">
+          <button class="btn btn-secondary" id="share-btn">
+            📤 Share
+          </button>
+          <button class="btn btn-primary" id="new-game-btn">
+            🔄 New Game
+          </button>
+        </div>
+      </div>
+      
+      <div class="bingo-card">
+        <div class="bingo-grid" id="bingo-grid">
+          <!-- Bingo squares will be rendered here by JavaScript -->
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Win Modal -->
+  <div class="modal-overlay" id="win-modal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <h2 class="win-title">BULLSHIT!</h2>
+      <p class="win-type" id="win-type">BINGO!</p>
+      <p class="win-time">Time: <span id="win-time">0:00</span></p>
+      <div class="modal-actions">
+        <button class="btn btn-primary" id="new-card-btn">
+          🎲 New Card (Same Topic)
+        </button>
+        <button class="btn btn-secondary" id="play-again-btn">
+          🔀 Choose Different Topic
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Confetti Container -->
+  <div id="confetti-container"></div>
+  
+  <!-- Scripts -->
+  <script src="js/wordlists.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
